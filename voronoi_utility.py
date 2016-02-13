@@ -473,7 +473,7 @@ class Voronoi_Sphere_Surface:
         df = pandas.DataFrame({'generator_indices' : filter_tuple[1]}, index = filter_tuple[0])
         gb = df.groupby('generator_indices')
         dictionary_generators_and_triangle_indices_containing_those_generators = gb.groups
-        for generator in tri.points[:-1]:
+        for generator in tri.points:
             indices_of_triangles_surrounding_generator = dictionary_generators_and_triangle_indices_containing_those_generators[generator_index]
             #pick any one of the triangles surrounding the generator and pick a non-generator vertex
             first_tetrahedron_index = indices_of_triangles_surrounding_generator[0]
